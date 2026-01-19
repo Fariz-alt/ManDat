@@ -1,55 +1,100 @@
-<form 
-  method="POST" 
-  action="https://script.google.com/macros/s/AKfycbxX5RGX9w5IRW-gf32f0OdGddSNvcbIJ9h9Bo0eQ9yvfzRhqvF05zDzjY8UCcJYdJDUOw/exec"
-  enctype="multipart/form-data"
->
-  <!-- Data Pengirim -->
-  <input name="Email" type="email" placeholder="Email" required>
-  <input name="Name" type="text" placeholder="Name" required>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Dataset</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 40px;
+    }
+    form {
+      max-width: 500px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    input, textarea, select, button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 14px;
+    }
+    button {
+      background: #2c7be5;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background: #1a68d1;
+    }
+  </style>
+</head>
+<body>
 
-  <!-- Dataset -->
-  <input 
-    name="DatasetFile" 
-    type="file" 
-    accept=".xls,.xlsx" 
-    required
+  <h2>Upload Dataset Excel</h2>
+
+  <form
+    method="POST"
+    action="https://script.google.com/macros/s/AKfycbxX5RGX9w5IRW-gf32f0OdGddSNvcbIJ9h9Bo0eQ9yvfzRhqvF05zDzjY8UCcJYdJDUOw/exec"
+    enctype="multipart/form-data"
   >
 
-  <input 
-    name="DatasetTitle" 
-    type="text" 
-    placeholder="Judul Dataset" 
-    required
-  >
+    <!-- Identitas -->
+    <input type="email" name="Email" placeholder="Email" required>
+    <input type="text" name="Name" placeholder="Nama" required>
 
-  <textarea 
-    name="Description" 
-    placeholder="Deskripsi singkat dataset" 
-    rows="4" 
-    required
-  ></textarea>
+    <!-- Dataset -->
+    <input
+      type="file"
+      name="DatasetFile"
+      accept=".xls,.xlsx"
+      required
+    >
 
-  <!-- Kategori -->
-  <select name="Category" required>
-    <option value="">Pilih Kategori</option>
-    <option value="Pendidikan">Pendidikan</option>
-    <option value="Kesehatan">Kesehatan</option>
-    <option value="Ekonomi">Ekonomi</option>
-    <option value="Lingkungan">Lingkungan</option>
-    <option value="Transportasi">Transportasi</option>
-    <option value="Teknologi">Teknologi</option>
-  </select>
+    <input
+      type="text"
+      name="DatasetTitle"
+      placeholder="Judul Dataset"
+      required
+    >
 
-  <!-- Tahun -->
-  <select name="Year" required>
-    <option value="">Pilih Tahun</option>
-    <option value="2020">2020</option>
-    <option value="2021">2021</option>
-    <option value="2022">2022</option>
-    <option value="2023">2023</option>
-    <option value="2024">2024</option>
-    <option value="2025">2025</option>
-  </select>
+    <textarea
+      name="Description"
+      placeholder="Deskripsi singkat dataset"
+      rows="4"
+      required
+    ></textarea>
 
-  <button type="submit">Send</button>
-</form>
+    <!-- Kategori -->
+    <select name="Category" required>
+      <option value="">Pilih Kategori</option>
+      <option value="Pendidikan">Pendidikan</option>
+      <option value="Kesehatan">Kesehatan</option>
+      <option value="Ekonomi">Ekonomi</option>
+      <option value="Lingkungan">Lingkungan</option>
+      <option value="Transportasi">Transportasi</option>
+      <option value="Teknologi">Teknologi</option>
+    </select>
+
+    <!-- Tahun -->
+    <select name="Year" required>
+      <option value="">Pilih Tahun</option>
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+    </select>
+
+    <button type="submit">Kirim Dataset</button>
+
+  </form>
+
+</body>
+</html>
